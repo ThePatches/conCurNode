@@ -1,4 +1,4 @@
-from attack.py import doAttack
+from attack import doAttack
 import threading
 
 exitFlag = 0
