@@ -5,9 +5,11 @@ var url = require('url');
 var app = express();
 app.use(bodyParser());
 
-var theList = [{name: "Patrick Taylor", age: 31, occuptation: "Developer"},
-		{name: "Chris McClintock", age: 31, occupation: "Feesh Store"},
-		{name: "Tyler Lowry", age: 32, occupation: "Editor"}] 
+var theList = [{id: 1, name: "Patrick Taylor", age: 31, occuptation: "Developer"},
+		{id: 2, name: "Chris McClintock", age: 31, occupation: "Feesh Store"},
+		{id: 3, name: "Tyler Lowry", age: 32, occupation: "Editor"}]
+
+var nId = 4;
 
 app.get("/", function(req, res)
 {
@@ -25,10 +27,10 @@ app.get("/add", function(req, res) {
 	console.log(queryData);
  
 	var inRecord = {};
+	inRecord.id = nId++; 
 	inRecord.name = queryData["name"];
 	inRecord.age = parseInt(queryData["age"]);
 	inRecord.occupation = queryData["job"];
-
 
 	theList.push(inRecord);
 
