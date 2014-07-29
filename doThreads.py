@@ -9,6 +9,7 @@ class MyThread(threading.Thread):
 		self.threadID = threadID
 		self.name = name
 		self.counter = counter
+	
 	def run(self):
 		print("Starting " + self.name);	
 		attackLoop(self.name, self.counter);
